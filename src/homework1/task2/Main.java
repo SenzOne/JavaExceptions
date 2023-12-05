@@ -14,7 +14,7 @@ public class Main {
     }
 
     static class Answer {
-        public int[] subArrays(int[] a, int[] b){
+        public int[] subArrays(int[] a, int[] b) {
             // Введите свое решение ниже
             if (a.length != b.length)
                 return new int[]{0};
