@@ -2,13 +2,21 @@ package homework3.validators;
 
 
 public class ReadDataValidator {
-    private String data;
 
 
-    public static boolean checkData(String data){
-        if (data.isEmpty()){
-            throw new NullPointerException("Строка не может быть пустой");
-        }
+//    public boolean checkData(){
+//        if (parsedInformation.length != 3) {
+//            throw new IllegalCallerException("Введено недостаточно данных");
+//        }
+//        return true;
+//    }
+
+    //TODO: реализация методов Check name, surname, ...., и вызов их в checkData
+    public boolean checkName(String name){
+        if (name.isEmpty())
+            throw new IllegalArgumentException("пустое Имя не допустимо");
+        else if (!name.matches("^[A-Za-z]+$"))
+            throw new IllegalArgumentException("Имя может содержать только латинсике буквы");
         return true;
     }
 }

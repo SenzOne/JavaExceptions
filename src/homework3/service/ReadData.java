@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class ReadData {
     private String data;
 
-    public String setData(){
+    public void setData(){
         System.out.println("""
                 Форматы данных:\s
                 фамилия, имя, отчество - строки
@@ -17,20 +17,13 @@ public class ReadData {
         System.out.println("Введите данные: ");
         Scanner scanner = new Scanner(System.in);
         data = scanner.nextLine();
-
-        if (ReadDataValidator.checkData(data)) {
-            System.out.println(data);
-            return "";
-        }
-        else return null;
     }
 
-    public void setData(String input){
-        data = input;
-    }
+//    public void setData(String input){
+//        data = input;
+//    }
 
     public String getData() {
-
         return data;
     }
 }
