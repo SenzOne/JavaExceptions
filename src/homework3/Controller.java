@@ -47,6 +47,7 @@ public class Controller {
 
 
             } catch (Exception e){
+                dataCount = 0;
                 System.out.println(e.getMessage());
             }
         }

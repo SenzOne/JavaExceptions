@@ -1,6 +1,8 @@
 package homework3.validators;
 
 
+import javax.imageio.IIOException;
+
 public class ReadDataValidator {
 
 
@@ -24,7 +26,8 @@ public class ReadDataValidator {
         if (dateOfBirth.isEmpty())
             throw new IllegalArgumentException("Дата рождения не может быть пустой");
         // DateOfBirthValidator data =  new DateOfBirthValidator();
-        else
-            return DateOfBirthValidator.isValidDateFormat(dateOfBirth);
+        else if (!DateOfBirthValidator.isValidDateFormat(dateOfBirth))
+            throw new IllegalArgumentException("Ошибка в дате");
+        return true;
     }
 }
