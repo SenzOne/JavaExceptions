@@ -11,9 +11,7 @@ public class ParseData {
     }
 
     public String getName() {
-        String name = parsedInformation[0];
-//        readDataValidator.checkName(name);
-        return name;
+        return parsedInformation[0];
     }
 
     public String getSurname() {
@@ -25,7 +23,7 @@ public class ParseData {
     }
 
     public String setDateOfBirth() {
-        return parsedInformation[3];
+        return parsedInformation[4];
     }
 
     public int setPhoneNumber() {

@@ -15,8 +15,16 @@ public class ReadDataValidator {
     public boolean checkName(String name){
         if (name.isEmpty())
             throw new IllegalArgumentException("пустое Имя не допустимо");
-        else if (!name.matches("^[A-Za-z]+$"))
+        else if (!name.matches("^[А-Яа-я]+$"))
             throw new IllegalArgumentException("Имя может содержать только латинсике буквы");
         return true;
+    }
+
+    public boolean checkDateOfBirth(String dateOfBirth) throws Exception {
+        if (dateOfBirth.isEmpty())
+            throw new IllegalArgumentException("Дата рождения не может быть пустой");
+        // DateOfBirthValidator data =  new DateOfBirthValidator();
+        else
+            return DateOfBirthValidator.isValidDateFormat(dateOfBirth);
     }
 }
