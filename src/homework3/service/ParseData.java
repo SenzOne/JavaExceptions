@@ -1,9 +1,8 @@
 package homework3.service;
 
-import homework3.validators.ReadDataValidator;
 
 public class ParseData {
-    ReadDataValidator readDataValidator = new ReadDataValidator();
+
     private final String[] parsedInformation;
 
     public ParseData(String data) {
@@ -11,11 +10,11 @@ public class ParseData {
     }
 
     public String getName() {
-        return parsedInformation[0];
+        return parsedInformation[1];
     }
 
     public String getSurname() {
-        return parsedInformation[1];
+        return parsedInformation[0];
     }
 
     public String setLastname() {
@@ -26,8 +25,8 @@ public class ParseData {
         return parsedInformation[4];
     }
 
-    public int setPhoneNumber() {
-        return Integer.parseInt(parsedInformation[4]);
+    public long setPhoneNumber() {
+        return Long.parseLong(parsedInformation[3]);
     }
 
     public char setGender() {

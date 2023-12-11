@@ -1,33 +1,35 @@
 package homework3.validators;
 
-
-import javax.imageio.IIOException;
-
 public class ReadDataValidator {
 
-
-//    public boolean checkData(){
-//        if (parsedInformation.length != 3) {
-//            throw new IllegalCallerException("Введено недостаточно данных");
-//        }
-//        return true;
-//    }
-
-    //TODO: реализация методов Check name, surname, ...., и вызов их в checkData
     public boolean checkName(String name){
         if (name.isEmpty())
-            throw new IllegalArgumentException("пустое Имя не допустимо");
-        else if (!name.matches("^[А-Яа-я]+$"))
-            throw new IllegalArgumentException("Имя может содержать только латинсике буквы");
+            throw new IllegalArgumentException("Пустое имя не допустимо");
+        else if (!name.matches("^[А-Яа-яA-Za-z]+$"))
+            throw new IllegalArgumentException("Имя может содержать только буквы кириллицы и латиницы");
         return true;
     }
+
 
     public boolean checkDateOfBirth(String dateOfBirth) throws Exception {
         if (dateOfBirth.isEmpty())
             throw new IllegalArgumentException("Дата рождения не может быть пустой");
-        // DateOfBirthValidator data =  new DateOfBirthValidator();
         else if (!DateOfBirthValidator.isValidDateFormat(dateOfBirth))
             throw new IllegalArgumentException("Ошибка в дате");
         return true;
     }
+
+    public boolean checkPhoneNumber(long phoneNumber){
+        if (!PhoneNumberValidator.isValidPhoneNumber(phoneNumber)) {
+            throw new IllegalArgumentException("Ошибка в номере телефона");
+        }
+        return true;
+    }
+
+    public boolean checkGender(char gender){
+        if (gender != 'f' && gender != 'm')
+            throw new IllegalArgumentException("Некорректное значение пола. Допустимые значения: 'f' или 'm'");
+        return true;
+    }
+
 }
