@@ -9,24 +9,25 @@ public class ParseData {
         this.parsedInformation = data.split(" ");
     }
 
+    public String getSurname() {
+        return parsedInformation[0];
+    }
+
     public String getName() {
         return parsedInformation[1];
     }
 
-    public String getSurname() {
-        return parsedInformation[0];
-    }
 
     public String setLastname() {
         return parsedInformation[2];
     }
 
     public String setDateOfBirth() {
-        return parsedInformation[4];
+        return parsedInformation[3];
     }
 
     public long setPhoneNumber() {
-        return Long.parseLong(parsedInformation[3]);
+        return Long.parseLong(parsedInformation[4]);
     }
 
     public char setGender() {

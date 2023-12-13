@@ -1,5 +1,7 @@
 package homework3.service;
 
+import java.util.Objects;
+
 public class Person {
     private String name;
     private String surName;
@@ -66,5 +68,21 @@ public class Person {
                 ", phoneNumber=" + phoneNumber +
                 ", gender=" + gender +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Person person = (Person) o;
+        return getPhoneNumber() == person.getPhoneNumber() && getGender() == person.getGender() &&
+                Objects.equals(getName(), person.getName()) && Objects.equals(getSurName(), person.getSurName()) &&
+                Objects.equals(getLastName(), person.getLastName()) &&
+                Objects.equals(getDateOfBirth(), person.getDateOfBirth());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getName(), getSurName(), getLastName(), getDateOfBirth(), getPhoneNumber(), getGender());
     }
 }
