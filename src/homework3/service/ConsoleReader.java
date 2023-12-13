@@ -1,10 +1,8 @@
 package homework3.service;
 
-import homework3.validators.ReadDataValidator;
-
 import java.util.Scanner;
 
-public class ReadData {
+public class ConsoleReader {
     private String data;
 
     public void setData(){
@@ -19,9 +17,6 @@ public class ReadData {
         data = scanner.nextLine();
     }
 
-//    public void setData(String input){
-//        data = input;
-//    }
 
     public String getData() {
         return data;

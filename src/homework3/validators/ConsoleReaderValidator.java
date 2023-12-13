@@ -1,6 +1,6 @@
 package homework3.validators;
 
-public class ReadDataValidator {
+public class ConsoleReaderValidator {
 
     public boolean checkName(String name){
         if (name.isEmpty())

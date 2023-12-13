@@ -1,13 +1,13 @@
 package homework3.service;
 
-import homework3.validators.ReadDataValidator;
+import homework3.validators.ConsoleReaderValidator;
 
 public class DataHandler {
 
     private final Person person;
-    private final ReadDataValidator readDataValidator;
+    private final ConsoleReaderValidator readDataValidator;
 
-    public DataHandler(Person person, ReadDataValidator readDataValidator) {
+    public DataHandler(Person person, ConsoleReaderValidator readDataValidator) {
         this.person = person;
         this.readDataValidator = readDataValidator;
     }
