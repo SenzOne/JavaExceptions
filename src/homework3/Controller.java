@@ -5,6 +5,7 @@ import homework3.validators.ConsoleReaderValidator;
 import homework3.validators.GetDataValidator;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 public class Controller {
 
@@ -18,8 +19,7 @@ public class Controller {
 
     public void addPerson() {
         try {
-            consoleReader.setData();  // Ввод из консоли или другого источника
-
+            consoleReader.setData();
             String stringData = consoleReader.getData();
             if (getDataValidator.checkConsoleData(stringData)){
                 ParseData parseData = new ParseData(stringData);
@@ -28,16 +28,14 @@ public class Controller {
                     saver.saveToFile(person);
             }
 
-            // System.out.println(Arrays.toString(parseData.getParsedInformation()));
-//            System.out.println(person.toString());
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
         } catch (IOException e) {
-            System.out.println("Ошибка при работе с файлом" + e.getMessage());
+            System.out.println("Ошибка при работе с файлом" + e.getMessage() + Arrays.toString(e.getStackTrace()));
         } catch (IndexOutOfBoundsException e) {
             System.out.println("Ошибка ввода в консоль" + e.getMessage());
         } catch (Exception e) {
-            System.out.println("Произошла непредвиденная ошибка: " + e.getMessage());
+            System.out.println("Произошла непредвиденная ошибка: " + e.getMessage() + Arrays.toString(e.getStackTrace()));
         }
     }
 }
